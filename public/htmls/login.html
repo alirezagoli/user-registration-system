@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../stylesheets/login.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="../images/IUT_logo.png"/>
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin" action="http://127.0.0.1:3000/login" method="post">
+            <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required autofocus>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+            <button class="btn  btn-primary  " type="submit">Sign in</button>
+            <button class="btn  btn-success  " type="button" onclick="window.location.href='http://127.0.0.1:3000/registration'">Sign up</button>
+        </form><!-- /form -->
+        <a href="#" class="forgot-password">
+            Forgot the password?
+        </a>
+    </div><!-- /card-container -->
+</div><!-- /container -->
+</body>
+</html>

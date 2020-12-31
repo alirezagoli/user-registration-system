@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Title
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        link(rel='stylesheet', href='/stylesheets/registration.css')
+    body
+        .container
+            .row
+                .panel.panel-primary
+                    .panel-body
+                        form(method='POST', action='http://127.0.0.1:3000/registration', role='form')
+                            .form-group
+                                h2 Create account
+                            .form-group
+                                label.control-label(for='signupFirstname') Firstname
+                                input#signupFirstname.form-control(type='text', name='firsname', maxlength='50', required='')
+                            .form-group
+                                label.control-label(for='signupLastname') Lastname
+                                input#signupLastname.form-control(type='text', name='lastname', maxlength='50', required='')
+                            .form-group
+                                label.control-label(for='signupEmail') Email
+                                input#signupEmail.form-control(type='email', name='email', maxlength='50', required='')
+                            .form-group
+                                label.control-label(for='signupPassword') Password
+                                input#signupPassword.form-control(type='password', name='password', maxlength='25', required='', placeholder='at least 8 characters', length='40', pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$', title='Password must contain at least 8 characters, including UPPER/lowercase and numbers.', onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');\
+                                if(this.checkValidity()) form.passwordAgain.pattern= this.value;")
+                            .form-group
+                                label.control-label(for='signupPasswordagain') Password again
+                                input#signupPasswordagain.form-control(type='password', name='passwordAgain', maxlength='25', required='', title='Please enter the same Password as above', onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');")
+                            .form-group
+                                button#signupSubmit.btn.btn-success.btn-block(type='submit')
+                                    | Sign up
+                            p
+                            | Already have an account?
+                            a(href='http://127.0.0.1:3000') Sign in
+                            p

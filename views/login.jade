@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Login
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        link(rel='stylesheet', href='/stylesheets/login.css')
+    body
+        .container
+            .card.card-container
+                img#profile-img.profile-img-card(src='../images/IUT_logo.png')
+                p#profile-name.profile-name-card
+                form.form-signin(action='http://127.0.0.1:3000/login', method='post')
+                    input#inputUsername.form-control(type='text', placeholder='Username', name='username', required='', autofocus='')
+                    input#inputPassword.form-control(type='password', placeholder='Password', name='password', required='')
+                    button.btn.btn-primary(type='submit') Sign in
+                    button.btn.btn-success(type='button', onclick="window.location.href='http://127.0.0.1:3000/registration'") Sign up
+                // /form
+                a.forgot-password(href='#')
+                    | Forgot the password?
+            // /card-container
+        // /container

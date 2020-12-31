@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+    head
+        title Management
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        link(rel='stylesheet', href='/stylesheets/user_management.css')
+    body
+        nav.navbar.navbar-inverse
+            .container-fluid
+                .navbar-header
+                    a.navbar-brand(href='#') #{userType}
+                ul.nav.navbar-nav
+                    if homeAccess
+                        li
+                            a(href='http://127.0.0.1:3000/users') Home
+                    li
+                        a(href='http://127.0.0.1:3000/users/management') User Management
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='http://127.0.0.1:3000/logout')
+                            span.glyphicon.glyphicon-log-in
+                            |  Logout
+        .container
+            h2 Management
+            p Change user's access:
+            table.table.table-bordered
+                thead
+                    tr
+                        th Username
+                        th HomeAccess
+                        th ManagementAccess
+                tbody
+                    each user in users
+                        tr
+                            td= user.email
+                            td(onclick='changeState(this)')= user.homeAccess
+                            td(onclick='changeState(this)')= user.managementAccess
+            input#sendServer.btn-primary.btn(name='sendServer', type='button', value='save changes')
+            script(type='text/javascript', src='/javascripts/user_management.js')

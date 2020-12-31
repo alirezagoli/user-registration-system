@@ -1,0 +1,10 @@
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/colorful-abstract-nagsh 12.jpg");
+}
+.alert{
+
+    margin:  0 auto;
+    margin-top: 100px;
+}

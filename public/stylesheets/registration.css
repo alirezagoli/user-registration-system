@@ -1,0 +1,33 @@
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/colorful-abstract-nagsh 12.jpg");
+}
+h2 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.container { max-width: 360px;
+}
+
+.divider {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.divider hr {
+    margin: 7px 0px;
+    width: 35%;
+}
+
+.left { float: left; }
+
+.right { float: right; }
+
+.panel{
+    background-color: #e0f0f3;
+    margin-top: 20px;
+    border-radius: 10px;
+}
